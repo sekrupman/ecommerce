@@ -25,25 +25,30 @@ var productSchema = new mongoose.Schema(
     category: {
       type: String,
       // ref: "Category",
-      required:true
+      required: true,
     },
     brand: {
       type: String,
-      required:true
+      required: true,
       // IN CASE NEED ENUM FOR RESTRICT USER INPUT
       // enum:['Black', 'Brown', 'Silver', 'White', 'Blue']
     },
-    quantity: { type: Number, required: true },
+    quantity: {
+      type: Number,
+      required: true,
+      select: false,
+    },
     sold: {
       type: Number,
       default: 0,
+      select: false,
     },
     images: {
       type: Array,
     },
     color: {
       type: String,
-      required:true
+      required: true,
       // IN CASE NEED ENUM FOR RESTRICT USER INPUT
       // enum:['Black', 'Brown', 'Silver', 'White', 'Blue']
     },
